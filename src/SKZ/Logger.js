@@ -7,7 +7,7 @@ define(function(){
    * You have to explicitly call {@link Logger#method-setLevel setLevel} to display anything
    * 
    */
-  
+   
   var _Logger = {
     /**
      * @cfg {Number} [_level=0] The level of the logger 
