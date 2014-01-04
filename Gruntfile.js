@@ -27,14 +27,6 @@ module.exports = function(grunt) {
         }
       }
     }
-  , gitcommit : {
-      skzlogger : {
-        options : {
-          message : 'Auto commit'
-        }
-      , files : ['.']
-      }
-    }
   , jasmine : {
       all : {
         src : ['src/*.js']
@@ -92,6 +84,12 @@ module.exports = function(grunt) {
       }
     , copyreadme : {
         command : 'cp config/doc/pages/guides/getting_started/README.md README.md'
+      , options : {
+          stdout : true
+        }
+      }
+    , gitcommit : {
+        command : 'git add . | git commit -m "Auto commit <%= appConfig.revision %>" | git push -u origin master'
       , options : {
           stdout : true
         }
@@ -186,7 +184,7 @@ module.exports = function(grunt) {
       grunt.file.delete(filesToBeDeleted[i]);
     }
   });
-  grunt.registerTask('build', ['strip_code', 'requirejs:dev_web', 'requirejs:prod_web', 'usebanner:web', 'shell:generateDoc', 'shell:copyreadme', 'deleteBuildFiles']);
+  grunt.registerTask('build', ['strip_code', 'requirejs:dev_web', 'requirejs:prod_web', 'usebanner:web', 'shell:generateDoc', 'shell:copyreadme', 'deleteBuildFiles', 'shell:gitcommit']);
   
   
   //Specific function for SKZ builder
