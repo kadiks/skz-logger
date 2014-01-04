@@ -4,8 +4,7 @@ define(function(){
    * If IE8 or minus are not in dev mode, it will not fire
    * 
    * @class Logger
-   * You have to explicitly call {@link Logger#method-setLevel setLevel} to display anything
-   * test 
+   * You have to explicitly call {@link Logger#method-setLevel setLevel} to display anything 
    */
   
   var _Logger = {
