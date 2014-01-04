@@ -9,3 +9,5 @@
 ## skz files to ignore
 dump/*
 config/profile/*
+node_modules/*
+npm-debug.log
