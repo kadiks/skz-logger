@@ -1,5 +1,5 @@
 /**
- * SuitKZ Logger v0.1.0 [04/01/2014 r63]
+ * SuitKZ Logger v0.1.0 [04/01/2014 r65]
  *
  * Suitcase logger for web and nodeJS
  *

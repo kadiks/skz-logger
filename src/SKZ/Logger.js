@@ -5,9 +5,9 @@ define(function(){
    * 
    * @class Logger
    * You have to explicitly call {@link Logger#method-setLevel setLevel} to display anything
-   * 
+   * test 
    */
-   
+  
   var _Logger = {
     /**
      * @cfg {Number} [_level=0] The level of the logger 
