@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--
+    Page done with the help of this blog: http://www.bennadel.com/blog/2393-Writing-My-First-Unit-Tests-With-Jasmine-And-RequireJS.htm    
+  -->
+  <title>Jasmine spec runner</title>
+  <link rel="stylesheet" href="../../lib/jasmine/1.3.1/jasmine.css" />
+  <script type="text/javascript" src="../../lib/jasmine/1.3.1/jasmine.js"></script>
+  <script type="text/javascript" src="../../lib/jasmine/1.3.1/jasmine-html.js"></script>
+  <script type="text/javascript" src="../../lib/jasmine/1.3.1/jasmine-reporter.js"></script><!-- External project, check out the source code -->
+</head>
+<body>
+  <script type="text/javascript" src="../../lib/requirejs/2.1.9/require.js" data-main="../../config/build/main.js"></script>
+  <script>
+    require(
+      [
+        '../../lib/requirejs/2.1.9/domReady!'
+      , '../../test/unit/spec/LoggerTest'
+      ]
+    , function(document){
+        // Set up the HTML reporter - this is reponsible for
+        // aggregating the results reported by Jasmine as the
+        // tests and suites are executed.
+        jasmine.getEnv().addReporter(
+          new jasmine.HtmlReporter()
+        );
+        jasmine.getEnv().addReporter(
+          new jasmine.JSReporter()
+        );
+  
+        // Run all the loaded test specs.
+        jasmine.getEnv().execute();
+    });
+  </script>
+</body>
+</html>

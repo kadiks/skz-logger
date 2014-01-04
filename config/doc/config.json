@@ -1,0 +1,8 @@
+{
+  "--" : "../../src",
+  "--output" : "../../doc",
+  "--title" : "SKZ Logger",
+  "--css" : "./style.css",
+  "--images" : "./img",
+  "--guides" : "./guides.json"
+}
