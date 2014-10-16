@@ -1,34 +1,31 @@
 {
-  "name" : "SuitKZ Logger",
-  "description" : "Suitcase logger for web and nodeJS",
-  "version" : "0.1.0",
-  "author" : {
-    "name" : "Jénaïc Cambré",
-    "email" : "me@jenaiccambre.com",
-    "url" : "http://kadiks.net/"
+  "name": "skz-logger",
+  "description": "Suitcase logger for web and nodeJS",
+  "version": "0.2.0",
+  "author": {
+    "name": "Jénaïc Cambré",
+    "email": "me@jenaiccambre.com",
+    "url": "http://kadiks.net/"
   },
-  "depedencies" : {
-    "grunt" : "0.4.x",
-    "grunt-cli" : "0.1.x",
-    "grunt-contrib-watch" : "0.5.x",
-    "jasmine-node" : "1.12.x",
-    "grunt-contrib-jasmine" : "0.5.x",
-    "grunt-template-jasmine-istanbul" : "0.2.x",
-    "grunt-strip-code" : "0.1.x",
-    "grunt-shell" : "0.6.x",
-    "grunt-contrib-requirejs" : "0.4.x",
-    "grunt-banner" : "0.2.x",
-    "grunt-contrib-connect" : "0.5.x"
+  "depedencies": {},
+  "main": "logger",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kadiks/skz-logger"
   },
-  "main" : "index",
-  "repository" : {
-    "type" : "git",
-    "url" : "git://github.com/kadiks/skz-logger"
+  "bugs": {
+    "url": "https://github.com/kadiks/skz-logger/issues"
   },
-  "bugs" : {
-    "url" : "https://github.com/kadiks/skz-logger/issues"
+  "engines": {
+    "node": "0.10.x"
   },
-  "engines" : {
-    "node" : "0.10.x"
+  "devDependencies": {
+    "mocha": "~1.21.5",
+    "jscoverage": "~0.5.6",
+    "assert": "~1.1.2",
+    "should": "~4.0.4"
+  },
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha ./test"
   }
 }

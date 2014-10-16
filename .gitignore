@@ -7,8 +7,8 @@
 *.out
 
 ## skz files to ignore
-dump/*
-config/profile/*
+#dump/*
+#config/profile/*
 node_modules/*
 npm-debug.log
-.grunt/*
+#.grunt/*
