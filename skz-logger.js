@@ -2,12 +2,12 @@
 (function(root, factory){
   if(typeof(define) === 'function' && define.amd){
     define([], function(){
-      return (root.returnExportsGlobal = factory());
+      return (root.skzLogger = factory());
     });
   } else if(typeof(exports) === 'object') {
     module.exports = factory();
   } else {
-    root.returnExportsGlobal = factory(root.b);
+    root.skzLogger = factory(root.b);
   }
 }(this, function(b){
   /**
@@ -291,8 +291,12 @@
       o = params || {}
     , level = typeof(o.level) === 'number' ? o.level : null 
     ;
-    if(level === null) return;
-    if(level >= this._levelsName.length) return;
+    if(level === null) {
+      return;
+    }
+    if(level >= this._levelsName.length) {
+      return;
+    }
     this._level = level;
   };
   
@@ -306,7 +310,9 @@
       o = params || {}
     , prefix = o.prefix
     ;
-    if(typeof(o.prefix) === 'undefined') return;
+    if(typeof(o.prefix) === 'undefined') {
+      return;
+    }
     this._prefix = prefix;
   };
   
@@ -321,8 +327,12 @@
       o = params || {}
     , transporter = o.transporter || null
     ;
-    if(transporter === null) return;
-    if(this._transporters.indexOf(transporter) === -1) return;
+    if(transporter === null) {
+      return;
+    }
+    if(this._transporters.indexOf(transporter) === -1) {
+      return;
+    }
     this._transporter = transporter;
   };
   
