@@ -8,7 +8,7 @@
     "url": "http://kadiks.net/"
   },
   "depedencies": {},
-  "main": "logger",
+  "main": "skz-logger",
   "repository": {
     "type": "git",
     "url": "git://github.com/kadiks/skz-logger"
