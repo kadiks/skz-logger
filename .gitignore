@@ -16,3 +16,6 @@ npm-debug.log
 ## jscoverage
 test-cov/*
 covreporter.html
+
+## eclipse
+*.project
