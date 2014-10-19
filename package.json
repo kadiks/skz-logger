@@ -7,7 +7,7 @@
     "email": "me@jenaiccambre.com",
     "url": "http://kadiks.net/"
   },
-  "depedencies": {},
+  "dependencies": {},
   "main": "skz-logger",
   "repository": {
     "type": "git",
