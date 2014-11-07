@@ -10,6 +10,7 @@
         root.skzLogger = factory(root.b);
     }
 }(this, function(b) {
+
     /**
      * Logs messages in the console of the browser.
      * If IE8 or minus are not in dev mode, it will not fire
@@ -18,6 +19,26 @@
      * You have to explicitly call {@link Logger#method-setLevel setLevel} to display anything
      *
      */
+
+    /**
+     * Example:
+     *
+     *     @example preview small frame
+     *     var logger = new skzLogger();
+     *     logger.setLevel({ level : 1 });
+     *     logger.setTransporter({ transporter : 'alert' });
+     *     logger.setPrefix({ prefix : 'Documentation' });
+     *     logger.debug('Message logged successfully');
+     */
+
+    /**
+     * See the example:
+     *
+     *     @example preview small frame
+     *     console.log('test2', skzLogger);
+     */
+
+
     var Logger = function() {};
 
     /**
@@ -51,6 +72,12 @@
     };
 
     /**
+     * @property {String} [_appId=null] The application id
+     * @private
+     */
+    Logger.prototype._appId = null;
+
+    /**
      * @cfg {String} [_prefix=null] Text to set before each call of the Logger instance
      * @private
      */
@@ -64,7 +91,13 @@
      * @property {Array} _transporters The possible transporters
      * @private
      */
-    Logger.prototype._transporters = ['console', 'window', 'documentWrite', 'alert'];
+    Logger.prototype._transporters = ['console', 'window', 'documentWrite', 'alert', 'ajax'];
+
+    /**
+     * @property {String} [_uid=null] The unique ID of the session
+     * @private
+     */
+    Logger.prototype._uid = null;
 
     /**
      * Build the message with all parameters
@@ -90,10 +123,18 @@
         var
             levelName = this._levelsName[level],
             prefix = this.getPrefix(),
+            uid = this.getUID(),
+            appId = this.getAppId(),
             msgConcat = msg;
         msgConcat.unshift('[' + levelName + ']:');
         if (prefix) {
             msgConcat.unshift('[' + prefix + ']');
+        }
+        if (uid) {
+            msgConcat.unshift('[' + uid + ']');
+        }
+        if (appId) {
+            msgConcat.unshift('[' + appId + ']');
         }
 
         return msgConcat;
@@ -208,6 +249,15 @@
     };
 
     /**
+     * Get the app Id
+     *
+     * @return {String} App Id
+     */
+    Logger.prototype.getAppId = function() {
+        return this._appId;
+    };
+
+    /**
      * Returns the current prefix of the logger
      * @return {Number} The level of the logger
      */
@@ -231,6 +281,15 @@
      */
     Logger.prototype.getTransporter = function() {
         return this._transporter;
+    };
+
+    /**
+     * Get the unique ID
+     *
+     * @return {String} Unique ID
+     */
+    Logger.prototype.getUID = function() {
+        return this._uid;
     };
 
     /**
@@ -263,7 +322,20 @@
             });
         return this._send(logMsg);
     };
-
+    /**
+     * Sets the application id
+     * @param {Object} params
+     * @param {String} params.appId The app id
+     */
+    Logger.prototype.setAppId = function(params) {
+        var
+            o = params || {},
+            appId = o.appId;
+        if (typeof(appId) === 'undefined') {
+            return;
+        }
+        this._appId = appId;
+    };
     /**
      * Sets the level of the logger
      * @param {Object} params
@@ -316,6 +388,21 @@
         this._transporter = transporter;
     };
 
+    /**
+     * Set the Unique ID for this session
+     *
+     * @param {Object} params
+     * @param {String} params.uid Unique ID of this session
+     */
+    Logger.prototype.setUID = function(params) {
+        var
+            o = params || {},
+            uid = o.uid || null;
+        if (uid === null) {
+            return;
+        }
+        this._uid = uid;
+    };
     /**
      * Sends a warning message
      * @param {String} The message to be sent

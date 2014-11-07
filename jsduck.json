@@ -1,0 +1,6 @@
+{
+  "--" : "./skz-logger.js",
+  "--output" : "../skz-logger-doc",
+  "--title" : "SuitKZ Logger",
+  "--welcome" : "../skz-logger/readme.md"
+}
