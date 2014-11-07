@@ -16,3 +16,4 @@ npm-debug.log
 ## jscoverage
 test-cov/*
 covreporter.html
+test/unit-cov/*
