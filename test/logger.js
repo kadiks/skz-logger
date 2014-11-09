@@ -4,6 +4,7 @@ var
 
 describe('Logger', function(){
   describe('Class', function(){
+    
     it('should be defined', function(){
       var
         Logger = require('../skz-logger')

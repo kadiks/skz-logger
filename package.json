@@ -7,7 +7,9 @@
     "email": "me@jenaiccambre.com",
     "url": "http://kadiks.net/"
   },
-  "depedencies": {},
+  "dependencies": {
+    "should": "^4.2.1"
+  },
   "main": "src/logger",
   "repository": {
     "type": "git",
@@ -20,6 +22,6 @@
     "node": "0.10.x"
   },
   "devDependencies": {
-    "skz-grunt-dev" : "git://github.com/kadiks/skz-grunt-dev.git"
+    "skz-grunt-dev": "git://github.com/kadiks/skz-grunt-dev.git"
   }
 }
